@@ -1,0 +1,26 @@
+.input-box-wrapper {
+	background-color: red;
+	position: relative;
+}
+.input-box {
+	padding: 10px;
+	border: none;
+	outline: none;
+}
+
+.input-box:focus {
+	outline: none;
+}
+
+.input-label {
+	position: absolute;
+	top: 50%;
+	font-size: 16px;
+	transform: translate(10px, -50%);
+	transition: transform 0.5s, font-size 0.5s;
+}
+
+.input-label.active {
+	font-size: 12px;
+	transform: translate(10px, calc(calc((100% + 8px)) * -1));
+}

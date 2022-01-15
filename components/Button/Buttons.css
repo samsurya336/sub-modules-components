@@ -1,0 +1,46 @@
+button {
+	padding: 0.8em;
+	width: 100px;
+	background: #0856f3;
+	color: rgb(12, 12, 12);
+	border: none;
+	border-radius: 5px;
+	transition: all 0.2s;
+	font-size: 15px;
+	font-weight: 500;
+	position: relative;
+	overflow: hidden;
+	box-shadow: none;
+}
+
+.ripple-button::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 150%;
+	aspect-ratio: 1 / 1;
+	transform: translate(-50%, -50%) scale(0);
+	pointer-events: none;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.ripple-button:active {
+	transform: scale(0.96);
+}
+
+.ripple-button:active::after {
+	animation: scale_up 400ms forwards;
+}
+
+@keyframes scale_up {
+	0% {
+		transform: translate(-50%, -50%) scale(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 0;
+	}
+}
